@@ -1,5 +1,9 @@
 import tkinter as tk
+import numpy as np
+import matplotlib.pyplot as plt
 from programmas_iestatījumi import iestatījumi, fons
+
+vērtības = {"amplitūde": None, "Lambda": None, "laiks": None, "x": None}
 
 def s_dati(root):
     logs = tk.Toplevel(root)
@@ -29,7 +33,7 @@ def s_dati(root):
     x_ievades.grid(row=3, column=1, padx=10, pady=5, sticky="w")
 
     vērtību_ievade = tk.Button(logs, text='Ievada vērtības',
-                               command=lambda: saglabā_vērtības(amplitūds_ievades, lambda_ievades, 
+                               command=lambda: saglabā_un_zīmē(amplitūds_ievades, lambda_ievades, 
                                                                 laika_ievades, x_ievades))
     vērtību_ievade.grid(row=4, column=0, columnspan=2, pady=10)
 
@@ -39,11 +43,45 @@ def s_dati(root):
     logs.rowconfigure(3, weight=1)
     logs.rowconfigure(4, weight=1)
 
-def saglabā_vērtības(amplitūds_ievades, lambda_ievades, laika_ievades, x_ievades):
-    amplitūde = amplitūds_ievades.get()
-    Lambda = lambda_ievades.get()
-    laiks = laika_ievades.get()
-    x = x_ievades.get()
+def saglabā_un_zīmē(amplitūds_ievades, lambda_ievades, laika_ievades, x_ievades):
+    """Saglabā vērtības un uzzīmē grafiku."""
+    try:
+        vērtības["amplitūde"] = float(amplitūds_ievades.get())
+        vērtības["Lambda"] = float(lambda_ievades.get())
+        vērtības["laiks"] = float(laika_ievades.get())
+        vērtības["x"] = int(x_ievades.get())
 
-    return amplitūde, Lambda, laiks, x
- 
+        if vērtības["Lambda"] == 0:
+            raise ZeroDivisionError("Lambda nevar būt nulle!")
+
+        zīmēt_grafiku(vērtības)
+
+    except ValueError:
+        print("Kļūda: Lūdzu ievadiet tikai skaitļus!")
+    except ZeroDivisionError as e:
+        print(f"Kļūda: {e}")
+
+def iegūt_vērtības():
+    return vērtības
+
+def zīmēt_grafiku(vērtības):
+    """Uzzīmē sinusoīdo viļņu grafiku, izmantojot saglabātās vērtības."""
+    amplitūde = vērtības["amplitūde"]
+    Lambda = vērtības["Lambda"]
+    laiks = vērtības["laiks"]
+    x_v = vērtības["x"]
+
+    k = 2 * np.pi / Lambda  # Viļņu skaits
+    omega = 2 * np.pi  # Lenķiskā frekvence
+
+    x = np.linspace(0, 10, x_v)  # X vērtību masīvs
+    y = amplitūde * np.sin(k * x - omega * laiks)  # Aprēķina viļņa vērtības
+
+    plt.figure()
+    plt.plot(x, y, label="Sinusoīdālais vilnis")
+    plt.xlabel("X pozīcija")
+    plt.ylabel("Amplitūda")
+    plt.title("Viļņa attēlošana")
+    plt.legend()
+    plt.grid()
+    plt.show()
