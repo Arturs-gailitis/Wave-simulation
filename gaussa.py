@@ -64,7 +64,7 @@ def saglabā_un_zīmē_g(amplitūds_ievades, lambda_ievades, centra_ievades, pla
     k = 2 * np.pi / Lambda  # Viļņu skaits
 
     x = np.linspace(0, 10, x_v)  # X vērtību masīvs
-    y = amplitūde * np.exp(-((x - xo) ** 2) / (2 * sigma ** 2)) * np.cos(k * x)  # Aprēķina Gaussa viļņa vērtības
+    y = amplitūde * np.exp(-((x - xo) ** 2) / (2 * sigma ** 2)) * np.sin(k * x)  # Aprēķina Gaussa viļņa vērtības
 
     #Uzzīmē grafiku
     plt.figure()
