@@ -10,7 +10,7 @@ root = tk.Tk()
 iestatījumi(root, 500, 400, 'Programmas par viļņu zīmēšanu galvenā izvelne')
 
 #eiestada fona bildi
-fons(root, 500, 400)
+fons(root, 500, 400, "fona_attēls.jpg")
 
 #Label, kas lietotājam liek saprast par programmu
 par_pogām_tekts = tk.Label(root, text='Izvēlaties ar kādu funkciju attēlosiet viļņus', font=('Ariel', 14), background='lightblue')

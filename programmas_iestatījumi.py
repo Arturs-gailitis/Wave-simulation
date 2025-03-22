@@ -18,9 +18,9 @@ def programmas_beigas(root):
 
     root.destroy()
 
-def fons(root, x, y):
+def fons(root, x, y, bilde):
     
-    ceļš = os.path.join("bildes", "fona_attēls.jpg") # Parāda fona bildes atrašanos
+    ceļš = os.path.join("bildes", bilde) # Parāda fona bildes atrašanos
 
     fona_bilde = Image.open(ceļš) # Bilde tiek atvērta 
     fona_bilde = fona_bilde.resize((x, y)) # Maina bildes izmērus
