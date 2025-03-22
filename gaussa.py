@@ -1,7 +1,7 @@
 import tkinter as tk
 import numpy as np
 import matplotlib.pyplot as plt
-from programmas_iestatījumi import iestatījumi, fons
+from programmas_iestatījumi import iestatījumi, fons, programmas_beigas
 
 def g_dati(root):
     
@@ -21,6 +21,7 @@ def g_dati(root):
     logs.rowconfigure(3, weight=1)
     logs.rowconfigure(4, weight=1)
     logs.rowconfigure(5, weight=1)
+    logs.rowconfigure(6, weight=1)
 
     #T iek izveidoti Label, kas paskaidro kādas vērtības ir domātas noteiktajiem texta logiem 
     tk.Label(logs, text='Amplitūde', background='darkgrey').grid(row=0, column=0, padx=10, pady=5, sticky="e")
@@ -48,9 +49,13 @@ def g_dati(root):
     #Tiek radīta poga, kas apkopos uz aizsūtīs vērtības uz grafikas zīmēšanu
     vērtību_ievade = tk.Button(logs, text='Ievada vērtības',
                                command=lambda: saglabā_un_zīmē_g(amplitūds_ievades, lambda_ievades, 
-                                                                centra_ievades, platuma_ievades, x_ievades),
-                                                                  background='darkgrey')
+                                                                centra_ievades, platuma_ievades, 
+                                                                x_ievades), background='darkgrey')
     vērtību_ievade.grid(row=5, column=0, columnspan=2, pady=10)
+
+    apakšlapas_iziešana = tk.Button(logs, text='Iziet ārā uz galveno sadaļu', 
+                                    command= lambda: programmas_beigas(logs), background='darkgray')
+    apakšlapas_iziešana.grid(row=6, column=0, columnspan=2, pady=10)
 
 def saglabā_un_zīmē_g(amplitūds_ievades, lambda_ievades, centra_ievades, platuma_ievades, x_ievades):
     

@@ -1,7 +1,7 @@
 import tkinter as tk
 import numpy as np
 import matplotlib.pyplot as plt
-from programmas_iestatījumi import iestatījumi, fons
+from programmas_iestatījumi import iestatījumi, fons, programmas_beigas
 
 def s_dati(root):
     
@@ -40,6 +40,10 @@ def s_dati(root):
                                command=lambda: saglabā_un_zīmē(amplitūds_ievades, lambda_ievades, 
                                                                 x_ievades), background='darkgrey')
     vērtību_ievade.grid(row=3, column=0, columnspan=2, pady=10)
+
+    apakšlapas_iziešana = tk.Button(logs, text='Iziet ārā uz galveno sadaļu', 
+                                    command= lambda: programmas_beigas(logs), background='darkgray')
+    apakšlapas_iziešana.grid(row=6, column=0, columnspan=2, pady=10)
 
 def saglabā_un_zīmē(amplitūds_ievades, lambda_ievades, x_ievades):
     
