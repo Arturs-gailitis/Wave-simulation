@@ -3,6 +3,7 @@ import tkinter as tk
 from programmas_iestatījumi import iestatījumi, programmas_beigas, fons
 from sin_dati import s_dati
 from cos_dati import c_dati
+from kvadratveids import k_dati
 
 #Izveido galveno grafisko logu
 root = tk.Tk()
@@ -24,6 +25,10 @@ sīnusa_poga.pack(pady=10)
 #Poga uz kosinusoidālā viļņu funkcijas izveidošanu
 kosīnusa_poga = tk.Button(root, text='Kosinusoidālā viļņa funkcija', background='lightblue', command=lambda: c_dati(root))
 kosīnusa_poga.pack(pady=10)
+
+#Poga uz kvadrātveida sinusoidālo viļņa funkciju izveidošanas
+kvadrāt_poga = tk.Button(root, text='Kvadrātveida sinusoidālo viļņa funkcija', background='lightblue', command=lambda: k_dati(root))
+kvadrāt_poga.pack(pady=10)
 
 #Poga ar kuru var izslēgt programmu
 beigu_poga = tk.Button(root, text='Programmas beigas', command=lambda: programmas_beigas(root), background='lightblue')
