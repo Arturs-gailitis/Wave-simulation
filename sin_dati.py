@@ -63,8 +63,6 @@ def saglabā_un_zīmē(amplitūds_ievades, lambda_ievades, x_ievades):
 
     plt.title("Vilnis kurš ir veidots ar sinusoīdo viļņu funkciju")
 
-    plt.legend()
-
     plt.grid()
 
     plt.show()

@@ -76,8 +76,6 @@ def saglabā_un_zīmē_g(amplitūds_ievades, lambda_ievades, centra_ievades, pla
 
     plt.title("Vilnis kurš ir veidots ar Gaussa viļņu funkciju")
 
-    plt.legend()
-
     plt.grid()
 
     plt.show()

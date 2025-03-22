@@ -70,8 +70,6 @@ def saglabā_un_zīmē_k(amplitūds_ievades, frekvence_ievades, x_ievades, ātru
 
     plt.title("Vilnis kurš ir veidots ar kvadrātveida sinusoidālo funkciju")
 
-    plt.legend()
-
     plt.grid()
 
     plt.show()

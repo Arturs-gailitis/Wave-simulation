@@ -63,8 +63,6 @@ def saglabā_un_zīmē_c(amplitūds_ievades, lambda_ievades, x_ievades):
 
     plt.title("Vilnis kurš ir veidots ar kosīnusa viļņu funkciju")
 
-    plt.legend()
-
     plt.grid()
 
     plt.show()
