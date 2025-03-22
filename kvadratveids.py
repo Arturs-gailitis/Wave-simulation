@@ -24,7 +24,7 @@ def k_dati(root):
     #T iek izveidoti Label, kas paskaidro kādas vērtības ir domātas noteiktajiem texta logiem 
     tk.Label(logs, text='Amplitūde', background='darkgrey').grid(row=0, column=0, padx=10, pady=5, sticky="e")
     tk.Label(logs, text='Frekvence', background='darkgrey').grid(row=1, column=0, padx=10, pady=5, sticky="e")
-    tk.Label(logs, text='X vērtība', background='darkgrey').grid(row=2, column=0, padx=10, pady=5, sticky="e")
+    tk.Label(logs, text='Pozīcija (X)', background='darkgrey').grid(row=2, column=0, padx=10, pady=5, sticky="e")
     tk.Label(logs, text='Viļņa izplatīšanās ātrums',
               background='darkgrey').grid(row=3, column=0, padx=10, pady=5, sticky="e")
 
@@ -57,11 +57,11 @@ def saglabā_un_zīmē_k(amplitūds_ievades, frekvence_ievades, x_ievades, ātru
     amplitūde = float(amplitūds_ievades.get()) # Amplitūde
     frekvence = float(frekvence_ievades.get()) # Viļņa frekvence
     ātrums = float(ātruma_ievades.get()) # Viļņa izplatīšanās ātrums
-    x_v = int(x_ievades.get()) # x vērtības
+    x_v = int(x_ievades.get()) # Pozīcija (X)
 
     k = (2 * np.pi) * frekvence / ātrums  # Viļņu skaits
 
-    x = np.linspace(0, 10, x_v)  # X vērtību masīvs
+    x = np.linspace(0, 10, x_v)  # Pozīciju masīvs
     y = amplitūde * np.sign(np.sin(k * x))  # Aprēķina kvadrātveida sīnusa viļņa vērtības
 
     #Uzzīmē grafiku
