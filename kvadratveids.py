@@ -20,6 +20,7 @@ def k_dati(root):
     logs.rowconfigure(2, weight=1)
     logs.rowconfigure(3, weight=1)
     logs.rowconfigure(4, weight=1)
+    logs.rowconfigure(5, weight=1)
 
     #T iek izveidoti Label, kas paskaidro kādas vērtības ir domātas noteiktajiem texta logiem 
     tk.Label(logs, text='Amplitūde', background='black', foreground='white').grid(row=0, column=0, 
@@ -54,7 +55,7 @@ def k_dati(root):
     apakšlapas_iziešana = tk.Button(logs, text='Iziet ārā uz galveno sadaļu', 
                                     command= lambda: programmas_beigas(logs), background='black', 
                                     foreground='white')
-    apakšlapas_iziešana.grid(row=6, column=0, columnspan=2, pady=10)
+    apakšlapas_iziešana.grid(row=5, column=0, columnspan=2, pady=10)
 
 def saglabā_un_zīmē_k(amplitūds_ievades, frekvence_ievades, x_ievades, ātruma_ievades):
     

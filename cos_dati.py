@@ -19,6 +19,7 @@ def c_dati(root):
     logs.rowconfigure(1, weight=1)
     logs.rowconfigure(2, weight=1)
     logs.rowconfigure(3, weight=1)
+    logs.rowconfigure(4, weight=1)
 
     #T iek izveidoti Label, kas paskaidro kādas vērtības ir domātas noteiktajiem texta logiem 
     tk.Label(logs, text='Amplitūde', background='darkgrey').grid(row=0, column=0, padx=10, pady=5, sticky="e")
@@ -44,7 +45,7 @@ def c_dati(root):
 
     apakšlapas_iziešana = tk.Button(logs, text='Iziet ārā uz galveno sadaļu', 
                                     command= lambda: programmas_beigas(logs), background='darkgray')
-    apakšlapas_iziešana.grid(row=6, column=0, columnspan=2, pady=10)
+    apakšlapas_iziešana.grid(row=4, column=0, columnspan=2, pady=10)
 
 
 def saglabā_un_zīmē_c(amplitūds_ievades, lambda_ievades, x_ievades):
