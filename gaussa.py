@@ -28,7 +28,8 @@ def g_dati(root):
     tk.Label(logs, text='Viļņa garums', background='darkgrey').grid(row=1, column=0, padx=10, pady=5, sticky="e")
     tk.Label(logs, text='Centra pozīcija', background='darkgrey').grid(row=2, column=0, padx=10, pady=5, sticky="e")
     tk.Label(logs, text='Platuma vērtība', background='darkgrey').grid(row=3, column=0, padx=10, pady=5, sticky="e")
-    tk.Label(logs, text='Pozīcija (X)', background='darkgrey').grid(row=4, column=0, padx=10, pady=5, sticky="e")
+    tk.Label(logs, text='Cik daudz cipari būs priekš X Pozīcijas', 
+             background='darkgrey').grid(row=4, column=0, padx=10, pady=5, sticky="e")
 
     # Lietotājs raksta iekšā teksta logos vērtības
     amplitūds_ievades = tk.Entry(logs, width=10)
@@ -64,7 +65,7 @@ def saglabā_un_zīmē_g(amplitūds_ievades, lambda_ievades, centra_ievades, pla
     Lambda = float(lambda_ievades.get()) # Viļņa garums
     xo = float(centra_ievades.get()) # Centra pozīcija
     sigma = float(platuma_ievades.get()) # Platums, kas nosaka viļņu izkliedi
-    x_v = int(x_ievades.get()) # Pozīcija
+    x_v = int(x_ievades.get()) # Cik daudz ciparu pozīcijā X būs starp intervāliem 0 un 10 
 
     k = 2 * np.pi / Lambda  # Viļņu skaits
 

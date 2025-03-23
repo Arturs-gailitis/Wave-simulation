@@ -23,7 +23,8 @@ def c_dati(root):
     #T iek izveidoti Label, kas paskaidro kādas vērtības ir domātas noteiktajiem texta logiem 
     tk.Label(logs, text='Amplitūde', background='darkgrey').grid(row=0, column=0, padx=10, pady=5, sticky="e")
     tk.Label(logs, text='Viļņa garums', background='darkgrey').grid(row=1, column=0, padx=10, pady=5, sticky="e")
-    tk.Label(logs, text='Pozīcija (X)', background='darkgrey').grid(row=2, column=0, padx=10, pady=5, sticky="e")
+    tk.Label(logs, text='Cik daudz cipari būs priekš X Pozīcijas', 
+            background='darkgrey').grid(row=2, column=0, padx=10, pady=5, sticky="e")
 
     # Lietotājs raksta iekšā teksta logos vērtības
     amplitūds_ievades = tk.Entry(logs, width=10)
@@ -51,7 +52,7 @@ def saglabā_un_zīmē_c(amplitūds_ievades, lambda_ievades, x_ievades):
     #Nepieciešamās vērtības
     amplitūde = float(amplitūds_ievades.get()) # Amplitūde
     Lambda = float(lambda_ievades.get()) # Viļņa garums
-    x_v = int(x_ievades.get()) # Pozīcija
+    x_v = int(x_ievades.get()) # Cik daudz ciparu pozīcijā X būs starp intervāliem 0 un 10 
 
     k = 2 * np.pi / Lambda  # Viļņu skaits
 
