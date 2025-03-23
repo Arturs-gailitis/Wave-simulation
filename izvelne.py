@@ -20,21 +20,21 @@ par_pogām_tekts = tk.Label(root, text='Izvēlaties ar kādu funkciju attēlosie
                            background='lightblue')
 par_pogām_tekts.pack(pady=10)
 
-#Poga uz sinusoīdo viļņu funkcijas izveidošanu
-sīnusa_poga = tk.Button(root, text='Sinusoīdo viļņu funkcija', background='lightblue',command=lambda: s_dati(root))
+#Poga uz sīnusa viļņu funkcijas izveidošanu
+sīnusa_poga = tk.Button(root, text='Sīnusa viļņu funkcija', background='lightblue',command=lambda: s_dati(root))
 sīnusa_poga.pack(pady=10)
 
-#Poga uz kosinusoidālā viļņu funkcijas izveidošanu
-kosīnusa_poga = tk.Button(root, text='Kosinusoidālā viļņa funkcija', background='lightblue', 
+#Poga uz kosīnusa viļņu funkcijas izveidošanu
+kosīnusa_poga = tk.Button(root, text='Kosīnusa viļņa funkcija', background='lightblue', 
                           command=lambda: c_dati(root))
 kosīnusa_poga.pack(pady=10)
 
-#Poga uz kvadrātveida sinusoidālo viļņa funkciju izveidošanas
-kvadrāt_poga = tk.Button(root, text='Kvadrātveida sinusoidālo viļņa funkcija', background='lightblue', 
+#Poga uz kvadrātveida sīnusa viļņa funkciju izveidošanas
+kvadrāt_poga = tk.Button(root, text='Kvadrātveida sīnusa viļņa funkcija', background='lightblue', 
                          command=lambda: k_dati(root))
 kvadrāt_poga.pack(pady=10)
 
-#Poga uz kvadrātveida sinusoidālo viļņa funkciju izveidošanas
+#Poga uz Gaussa viļņa funkciju izveidošanas
 gauss_poga = tk.Button(root, text='Gaussa viļņa funkcija', background='lightblue', command=lambda: g_dati(root))
 gauss_poga.pack(pady=10)
 
