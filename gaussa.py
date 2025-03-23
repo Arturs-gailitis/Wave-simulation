@@ -9,7 +9,7 @@ def g_dati(root):
 
     iestatījumi(logs, 500, 400, 'Ievada mainīgo vērtības priekš Gaussa viļņu funkcijas')
 
-    fons(logs, 500, 400, "fona_attēls1.jpeg")
+    fons(logs, 500, 400, "fona_attēls3.jpg")
 
     # Tiek izveidotas kolonnas un rindas, kuros tiks ielikti elementi, lai tie izskatītos kārtīgi
     logs.columnconfigure(0, weight=1) 

@@ -9,7 +9,7 @@ def k_dati(root):
 
     iestatījumi(logs, 500, 400, 'Ievada mainīgo vērtības priekš kvadrātveida viļņu funkcijas')
 
-    fons(logs, 500, 400, "fona_attēls1.jpeg")
+    fons(logs, 500, 400, "fona_attēls2.jpg")
 
     # Tiek izveidotas kolonnas un rindas, kuros tiks ielikti elementi, lai tie izskatītos kārtīgi
     logs.columnconfigure(0, weight=1) 
@@ -22,12 +22,14 @@ def k_dati(root):
     logs.rowconfigure(4, weight=1)
 
     #T iek izveidoti Label, kas paskaidro kādas vērtības ir domātas noteiktajiem texta logiem 
-    tk.Label(logs, text='Amplitūde', background='darkgrey').grid(row=0, column=0, padx=10, pady=5, sticky="e")
-    tk.Label(logs, text='Frekvence', background='darkgrey').grid(row=1, column=0, padx=10, pady=5, sticky="e")
+    tk.Label(logs, text='Amplitūde', background='black', foreground='white').grid(row=0, column=0, 
+                                                                                  padx=10, pady=5, sticky="e")
+    tk.Label(logs, text='Frekvence', background='black', foreground='white').grid(row=1, column=0, 
+                                                                                  padx=10, pady=5, sticky="e")
     tk.Label(logs, text='Cik daudz cipari būs priekš X Pozīcijas', 
-             background='darkgrey').grid(row=2, column=0, padx=10, pady=5, sticky="e")
+             background='black', foreground='white').grid(row=2, column=0, padx=10, pady=5, sticky="e")
     tk.Label(logs, text='Viļņa izplatīšanās ātrums',
-              background='darkgrey').grid(row=3, column=0, padx=10, pady=5, sticky="e")
+              background='black', foreground='white').grid(row=3, column=0, padx=10, pady=5, sticky="e")
 
     # Lietotājs raksta iekšā teksta logos vērtības
     amplitūds_ievades = tk.Entry(logs, width=10)
@@ -45,11 +47,13 @@ def k_dati(root):
     #Tiek radīta poga, kas apkopos uz aizsūtīs vērtības uz grafikas zīmēšanu
     vērtību_ievade = tk.Button(logs, text='Ievada vērtības',
                                command=lambda: saglabā_un_zīmē_k(amplitūds_ievades, frekvence_ievades, 
-                                                                x_ievades, ātruma_ievades), background='darkgrey')
+                                                                x_ievades, ātruma_ievades), background='black', 
+                                                                foreground='white')
     vērtību_ievade.grid(row=4, column=0, columnspan=2, pady=10)
 
     apakšlapas_iziešana = tk.Button(logs, text='Iziet ārā uz galveno sadaļu', 
-                                    command= lambda: programmas_beigas(logs), background='darkgray')
+                                    command= lambda: programmas_beigas(logs), background='black', 
+                                    foreground='white')
     apakšlapas_iziešana.grid(row=6, column=0, columnspan=2, pady=10)
 
 def saglabā_un_zīmē_k(amplitūds_ievades, frekvence_ievades, x_ievades, ātruma_ievades):
